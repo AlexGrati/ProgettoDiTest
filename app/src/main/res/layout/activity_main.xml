@@ -33,7 +33,7 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerViewId"
         android:layout_width="348dp"
-        android:layout_height="350dp"
+        android:layout_height="380dp"
         android:layout_below="@+id/bSearch"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="19dp" />
@@ -45,6 +45,7 @@
         android:layout_below="@+id/recyclerViewId"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="22dp"
-        android:text="List of all Events" />
+        android:text="List of all Events"
+        android:visibility="invisible" />
 
 </RelativeLayout>

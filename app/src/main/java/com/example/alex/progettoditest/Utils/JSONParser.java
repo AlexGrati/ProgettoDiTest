@@ -45,6 +45,7 @@ public class JSONParser {
             }
             if(dbHelper.containsArtist(artist.getId()).getCount() == 0)
                 dbHelper.insertArtist(artist.getId(), artist.getName(), artist.getImgUrl());
+            dbHelper.close();
         }catch (JSONException e){
             e.printStackTrace();
         }
@@ -87,6 +88,7 @@ public class JSONParser {
                 if(dbHelper.containsEvent(event.getId()).getCount() == 0){
                     dbHelper.insertEvent(event.getId(), event.getArtistId(), event.getTitle(), event.getVenueId(), DateConversion.formatDateToString(event.getDateTime()));
                 }
+                dbHelper.close();
                 eventList.add(event);
             }
         }catch (JSONException e){
@@ -132,6 +134,7 @@ public class JSONParser {
         cursor.moveToFirst();
         venue.setId(Integer.parseInt(cursor.getString(0)));
         cursor.close();
+        dbHelper.close();
         return venue;
     }
 }

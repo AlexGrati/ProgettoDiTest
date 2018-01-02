@@ -1,5 +1,6 @@
 package com.example.alex.progettoditest;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -30,8 +31,9 @@ import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
 
-public class MainActivity extends AppCompatActivity implements ResponseController{
+public class MainActivity extends Activity implements ResponseController{
     private EditText search;
+    private TextView textView;
     private ResponseController responseController;
     private ProgressDialog progressDialog;
     private String searchElements;
@@ -47,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements ResponseControlle
         responseController = this;
         progressDialog = new ProgressDialog(MainActivity.this);
         search = findViewById(R.id.editTextSearch);
+        textView = findViewById(R.id.textView);
     }
 
     public void onSearchButtonPressed(View v){
@@ -111,6 +114,7 @@ public class MainActivity extends AppCompatActivity implements ResponseControlle
 
                     eventAdapter = new EventAdapter(getApplicationContext(),  eventList);
                     recyclerView.setAdapter(eventAdapter);
+                    textView.setVisibility(View.VISIBLE);
 
                 }
                 responseController.respondOnRecevedData();
