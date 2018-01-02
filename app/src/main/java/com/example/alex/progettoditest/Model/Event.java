@@ -11,22 +11,22 @@ public class Event {
     private int artistId;
     private String title;
     private Date dateTime;
-    private Venue venue;
+    private int venueId;
 
     public Event() {
         this.id = -1;
         this.artistId = -1;
         this.title = null;
         this.dateTime = null;
-        this.venue = null;
+        this.venueId = -1;
     }
 
-    public Event(int id, int artistId, String title, Date dateTime, Venue venue) {
+    public Event(int id, int artistId, String title, Date dateTime, int venueId) {
         this.id = id;
         this.artistId = artistId;
         this.title = title;
         this.dateTime = dateTime;
-        this.venue = venue;
+        this.venueId = venueId;
     }
 
     public int getId() {
@@ -35,6 +35,14 @@ public class Event {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getVenueId() {
+        return venueId;
+    }
+
+    public void setVenueId(int venueId) {
+        this.venueId = venueId;
     }
 
     public int getArtistId() {
@@ -59,13 +67,5 @@ public class Event {
 
     public void setDateTime(Date dateTime) {
         this.dateTime = dateTime;
-    }
-
-    public Venue getVenue() {
-        return venue;
-    }
-
-    public void setVenue(Venue venue) {
-        this.venue = venue;
     }
 }

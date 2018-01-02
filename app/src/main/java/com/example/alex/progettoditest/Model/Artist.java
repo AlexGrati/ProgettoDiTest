@@ -1,5 +1,7 @@
 package com.example.alex.progettoditest.Model;
 
+import android.graphics.drawable.Drawable;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,26 +12,26 @@ import java.util.List;
 public class Artist {
     private int id;
     private String name;
-    private List<Event> eventList;
+    private String imgUrl;
 
     public Artist(){
-        this.eventList = new ArrayList<>();
         this.id = -1;
         this.name = null;
+        this.imgUrl = null;
     }
 
-    public Artist(int id, String name, List<Event> eventList) {
-        this.eventList = eventList;
+    public Artist(int id, String name, String imgUrl) {
         this.id = id;
         this.name = name;
+        this.imgUrl = imgUrl;
     }
 
-    public List<Event> getEventList() {
-        return eventList;
+    public String getImgUrl() {
+        return imgUrl;
     }
 
-    public void setEventList(List<Event> eventList) {
-        this.eventList = eventList;
+    public void setImgUrl(String img) {
+        this.imgUrl = img;
     }
 
     public int getId() {

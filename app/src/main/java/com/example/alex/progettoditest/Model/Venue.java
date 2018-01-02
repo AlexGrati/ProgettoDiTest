@@ -5,13 +5,16 @@ package com.example.alex.progettoditest.Model;
  */
 
 public class Venue {
+
+    private int id;
     private String name;
     private String city;
     private String country;
-    private long latitude;
-    private long longitude;
+    private double latitude;
+    private double longitude;
 
     public Venue(){
+        this.id = -1;
         this.name = null;
         this.city = null;
         this.city = null;
@@ -19,12 +22,21 @@ public class Venue {
         this.longitude = 0;
     }
 
-    public Venue(String name, String city, String country, long latitude, long longitude) {
+    public Venue(int id, String name, String city, String country, double latitude, double longitude) {
+        this.id = id;
         this.name = name;
         this.city = city;
         this.country = country;
         this.latitude = latitude;
         this.longitude = longitude;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -51,19 +63,19 @@ public class Venue {
         this.country = country;
     }
 
-    public long getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(long latitude) {
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 
-    public long getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(long longitude) {
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
 }

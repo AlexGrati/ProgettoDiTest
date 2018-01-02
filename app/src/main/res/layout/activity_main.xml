@@ -9,22 +9,42 @@
 
     <EditText
         android:id="@+id/editTextSearch"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/bSearch"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="35dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="22dp"
         android:ems="10"
         android:hint="Search Artist"
-        android:inputType="textPersonName"
+        android:inputType="textPersonName|textAutoComplete"
         android:textAlignment="center" />
 
     <Button
         android:id="@+id/bSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/editTextSearch"
+        android:layout_alignBottom="@+id/editTextSearch"
+        android:layout_alignParentEnd="true"
         android:onClick="onSearchButtonPressed"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:text="Search" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerViewId"
+        android:layout_width="348dp"
+        android:layout_height="350dp"
+        android:layout_below="@+id/bSearch"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recyclerViewId"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:text="List of all Events" />
+
 </RelativeLayout>
